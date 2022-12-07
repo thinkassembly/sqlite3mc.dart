@@ -12,6 +12,7 @@ bool isWorker() {
 }
 
 
+
 /// Obtains a database connection for running drift on the web.
 DatabaseConnection connect({bool isInWebWorker = false, String key = ''}) {
   if (!isInWebWorker) {
