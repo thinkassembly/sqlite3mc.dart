@@ -20,7 +20,6 @@ function startWorkerJsShim(reader, writer, sentinel) {
 }
 
 function startFileWorkerJsShim(worker,  argBuffer, resultBuffer, initSemaphore) {
-    console.log("startFileWorkerJsShim");
     worker.postMessage(
         {
             "type": "__absurd:setup-file-channel",/* "port": port,*/
