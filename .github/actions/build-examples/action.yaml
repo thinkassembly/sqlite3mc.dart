@@ -1,0 +1,62 @@
+name: 'Deploy examples to github pages'
+description: 'Automates the build and deployment of examples on Github gh pages'
+author: 'thinkassembly'
+
+branding:
+  color: blue
+  icon: code
+
+inputs:
+
+  workingDir:
+    description: 'The directory where the project is (default .)'
+    required: false
+    default: .
+  baseHref:
+    description: 'base href (if applicable)'
+    required: false
+    default: "/"
+  customArgs:
+    description: 'Custom args like: --dart-define="simple=example"'
+    required: false
+    default:
+
+runs:
+  using: 'composite'
+  steps:
+    - run: |
+        mkdir gh_pages_tmp 
+        shopt -s extglob dotglob
+        cp  examples/index.html gh_pages_tmp/index.html
+        shopt -u dotglob
+      shell: bash
+
+    #Build Original App
+    - run: flutter config --enable-web
+      shell: bash
+      working-directory: examples/app
+    - run: flutter build web --release --web-renderer=canvaskit --base-href /sqlite3mc.dart/app/ ${{inputs.customArgs}}
+      shell: bash
+      working-directory: examples/app
+    - run: |
+        mkdir gh_pages_tmp/app
+        shopt -s extglob dotglob
+        mv  examples/app/build/web/** gh_pages_tmp/app
+        shopt -u dotglob
+      shell: bash
+
+    - run: git config user.name github-actions
+      shell: bash
+      working-directory: gh_pages_tmp # ${{inputs.workingDir}}
+    - run: git config user.email github-actions@github.com
+      shell: bash
+      working-directory: gh_pages_tmp # ${{inputs.workingDir}}
+    - run: git --work-tree . add --all
+      shell: bash
+      working-directory: gh_pages_tmp # ${{inputs.workingDir}}
+    - run: git commit -m "Automatic deployment by github-actions"
+      shell: bash
+      working-directory: gh_pages_tmp # ${{inputs.workingDir}}
+    - run: git push origin HEAD:gh-pages --force
+      shell: bash
+      working-directory: gh_pages_tmp # ${{inputs.workingDir}}
