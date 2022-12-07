@@ -5,8 +5,8 @@ project(${PROJECT_NAME} LANGUAGES C)
 include(FetchContent)
 FetchContent_Declare(
         sqlite3mc
-                 URL https://github.com/utelle/SQLite3MultipleCiphers/releases/download/v1.5.3/sqlite3mc-1.5.3-sqlite-3.39.4-amalgamation.zip
-                 URL_HASH  SHA512=0edaa07b77368ee019c965951089a9f4f994de4cc0108980447fb99e2c17fe910201ea754bbbdc6a268012a6d1cfd8c9f64d12ae0e5db875e7f3e304c72366f1
+        URL https://github.com/utelle/SQLite3MultipleCiphers/releases/download/v1.5.4/sqlite3mc-1.5.4-sqlite-3.40.0-amalgamation.zip
+        URL_HASH  SHA512=e2a677af79bc4331df6cd9c2549dd98cbca514ac7c0a7ac1c93b15051b7f5d33c2a3ec05e03793222cbbbbb3833054f6dbca49581e214572ab7dd5d47ece0ead
 )
 FetchContent_MakeAvailable(sqlite3mc)
 
