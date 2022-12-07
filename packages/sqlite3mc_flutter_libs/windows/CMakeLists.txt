@@ -26,8 +26,8 @@ include(FetchContent)
 
   FetchContent_Declare(
         sqlite3
-        URL https://github.com/utelle/SQLite3MultipleCiphers/releases/download/v1.4.8/sqlite3mc-1.4.8-sqlite-3.39.2-amalgamation.zip
-        URL_HASH  SHA512=d7127734007cb1623e49808ca024ba5d5b07bbe1306f90d0c3a7e5d26daf4e6c17a158f7b1b394c1c54bfb710c0b13104867c95358f7433650075a81c644663c
+        URL https://github.com/utelle/SQLite3MultipleCiphers/releases/download/v1.5.4/sqlite3mc-1.5.4-sqlite-3.40.0-amalgamation.zip
+        URL_HASH  SHA512=e2a677af79bc4331df6cd9c2549dd98cbca514ac7c0a7ac1c93b15051b7f5d33c2a3ec05e03793222cbbbbb3833054f6dbca49581e214572ab7dd5d47ece0ead
   )
 
 FetchContent_MakeAvailable(sqlite3)
