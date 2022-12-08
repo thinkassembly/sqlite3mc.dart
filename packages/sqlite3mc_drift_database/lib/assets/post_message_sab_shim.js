@@ -1,6 +1,5 @@
 
 function startWorkerJsShim(reader, writer, sentinel) {
-    console.log("startWorkerJsshim?");
     // In a normal world, we'd spawn the worker here as a child worker.
     // However Safari doesn't support nested workers, so we have to
     // proxy them through the main thread
