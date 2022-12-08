@@ -1,8 +1,0 @@
-# melos_managed_dependency_overrides: sqlite3mc_flutter_libs,sqlite3mc_drift_database,sqlite3mc_drift_dev
-dependency_overrides:
-  sqlite3mc_flutter_libs:
-    path: ../../packages/sqlite3mc_flutter_libs
-  sqlite3mc_drift_database:
-    path: ../../packages/sqlite3mc_drift_database
-  sqlite3mc_drift_dev:
-    path: ../../packages/sqlite3mc_drift_dev

@@ -1,9 +1,0 @@
-name: sqlite3mc_dart
-
-packages:
-  - packages/**
-  - examples/**
-
-command:
-  bootstrap:
-    usePubspecOverrides: true
